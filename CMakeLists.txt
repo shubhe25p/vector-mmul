@@ -29,12 +29,12 @@ if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Intel")
 endif ()
 
 # clang compiler stuff not ready yet
-#if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
+# if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
 #   message(STATUS "setting vector flags for clang++ compiler = " ${CMAKE_C_COMPILER_ID})
 #   set(VFLAGS -O3 -fvectorize -ftree-vectorize  -mprefer-vector-width=512 -Rpass-analysis=loop-vectorize  -fsave-optimization-record -ffast-math)
-#   set(VFLAGS -O2 -fvectorize -mprefer-vector-width=512 -Rpass=vector)
-#
-#endif ()
+# #   set(VFLAGS -O2 -fvectorize -mprefer-vector-width=512 -Rpass=vector)
+
+# endif ()
 
 # Common library target for benchmarking.
 add_library(benchmark OBJECT benchmark.cpp)
@@ -55,11 +55,13 @@ target_link_libraries(benchmark-blas PRIVATE benchmark ${BLAS_LIBRARIES})
 target_compile_features(benchmark-blas PRIVATE c_std_11 c_restrict)
 target_compile_options(benchmark-blas PRIVATE -Wall -pedantic -march=native)
 
+
+
 add_executable(benchmark-openmp dgemv-openmp.cpp)
 target_link_libraries(benchmark-openmp PRIVATE benchmark ${BLAS_LIBRARIES})
 target_link_options(benchmark-openmp PRIVATE -fopenmp)
 target_compile_features(benchmark-openmp PRIVATE c_std_11 c_restrict)
-target_compile_options(benchmark-openmp PRIVATE -fopenmp -Wall -pedantic -march=native -O1)
+target_compile_options(benchmark-openmp PRIVATE -fopenmp -Wall -pedantic -march=native -O1 -lomp)
 set(BENCHMARK "openmp")
 configure_file(job.in job-${BENCHMARK})
 

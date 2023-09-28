@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <omp.h>
+#include "/opt/homebrew/opt/libomp/include/omp.h"
 
 const char* dgemv_desc = "OpenMP dgemv.";
 
