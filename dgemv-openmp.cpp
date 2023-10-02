@@ -27,7 +27,7 @@ void my_dgemv(int n, double* A, double* x, double* y) {
    //    sum+=i;
    // }
    // printf("sum: %f\n", sum);
-   #pragma omp parallel for collapse(2) schedule(static)
+   #pragma omp parallel for
    for(int i=0;i<n;i++){
       for(int j=0;j<n;j++){
          y[i]+= A[i*n+j]*x[j];
