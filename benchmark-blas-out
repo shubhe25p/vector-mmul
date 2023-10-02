@@ -1,14 +1,14 @@
 Description:	Reference dgemv.
 
 Working on problem size N=1024 
-Elapsed time: 0.000658 seconds 
+Elapsed time: 0.000484 seconds 
 Working on problem size N=1024 
-Elapsed time: 0.000183 seconds 
+Elapsed time: 0.000180 seconds 
 Working on problem size N=2048 
-Elapsed time: 0.000634 seconds 
+Elapsed time: 0.000501 seconds 
 Working on problem size N=4096 
-Elapsed time: 0.004067 seconds 
+Elapsed time: 0.004072 seconds 
 Working on problem size N=8192 
-Elapsed time: 0.018736 seconds 
+Elapsed time: 0.018292 seconds 
 Working on problem size N=16384 
-Elapsed time: 0.078382 seconds 
+Elapsed time: 0.073979 seconds 
