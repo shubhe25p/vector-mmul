@@ -1,4 +1,4 @@
-#include "/opt/homebrew/opt/openblas/include/cblas.h"
+#include <cblas.h>
 
 const char* dgemv_desc = "Reference dgemv.";
 
