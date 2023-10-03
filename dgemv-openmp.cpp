@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <omp.h>
-
 const char* dgemv_desc = "OpenMP dgemv.";
 
 /*
@@ -29,9 +28,12 @@ void my_dgemv(int n, double* A, double* x, double* y) {
    // printf("sum: %f\n", sum);
    #pragma omp parallel for
    for(int i=0;i<n;i++){
+       double dot=0.0;
+       int k=i*n;
       for(int j=0;j<n;j++){
-         y[i]+= A[i*n+j]*x[j];
+         dot+= A[k+j]*x[j];
       }
+      y[i]+=dot;
    }
 
    // insert your dgemv code here. you may need to create additional parallel regions,
