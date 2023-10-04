@@ -15,7 +15,7 @@
 
 #include <cmath> // For: fabs
 
-#include <cblas.h>
+#include "/opt/homebrew/opt/openblas/include/cblas.h"
 #include <string.h>
 
 // external definitions for mmul's

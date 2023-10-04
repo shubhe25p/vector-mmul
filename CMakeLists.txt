@@ -55,13 +55,38 @@ target_link_libraries(benchmark-blas PRIVATE benchmark ${BLAS_LIBRARIES})
 target_compile_features(benchmark-blas PRIVATE c_std_11 c_restrict)
 target_compile_options(benchmark-blas PRIVATE -Wall -pedantic -march=native)
 
-
-
 add_executable(benchmark-openmp dgemv-openmp.cpp)
 target_link_libraries(benchmark-openmp PRIVATE benchmark ${BLAS_LIBRARIES})
 target_link_options(benchmark-openmp PRIVATE -fopenmp)
 target_compile_features(benchmark-openmp PRIVATE c_std_11 c_restrict)
 target_compile_options(benchmark-openmp PRIVATE -fopenmp -Wall -pedantic -march=native -O1 -lomp)
+
+# if(APPLE)
+#     set(CMAKE_C_COMPILER clang)
+#     set(CMAKE_CXX_COMPILER clang++)
+
+#     if(CMAKE_C_COMPILER_ID MATCHES "Clang\$")
+#         set(OpenMP_C_FLAGS "-Xpreprocessor -fopenmp")
+#         set(OpenMP_C_LIB_NAMES "omp")
+#         set(OpenMP_omp_LIBRARY omp)
+#     endif()
+
+#     if(CMAKE_CXX_COMPILER_ID MATCHES "Clang\$")
+#         set(OpenMP_CXX_FLAGS "-Xpreprocessor -fopenmp")
+#         set(OpenMP_CXX_LIB_NAMES "omp")
+#         set(OpenMP_omp_LIBRARY omp)
+#     endif()
+
+# endif()
+
+# find_package(OpenMP REQUIRED)
+
+# # add_executable(helloworld helloworld.cpp)
+# add_executable(benchmark-openmp dgemv-openmp.cpp)
+# target_link_libraries(benchmark-openmp PRIVATE benchmark ${BLAS_LIBRARIES})
+# target_link_libraries(benchmark-openmp PRIVATE OpenMP::OpenMP_CXX)
+# target_compile_options(benchmark-openmp PRIVATE -Wall -pedantic -march=native -O1)
+
 set(BENCHMARK "openmp")
 configure_file(job.in job-${BENCHMARK})
 

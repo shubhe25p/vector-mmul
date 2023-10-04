@@ -1,4 +1,4 @@
-#include <cblas.h>
+#include "/opt/homebrew/opt/openblas/include/cblas.h"
 
 const char* dgemv_desc = "Reference dgemv.";
 
@@ -14,3 +14,5 @@ void my_dgemv(int n, double* A, double* x, double* y) {
    int lda=n, incx=1, incy=1;
    cblas_dgemv(CblasRowMajor, CblasNoTrans, n, n, alpha, A, lda, x, incx, beta, y, incy);
 }
+
+

@@ -1,0 +1,82 @@
+Problem Size,Basic VMM,Vector VMM,OMP-1 VMM, OMP-4 VMM, OMP-16 VMM, OMP-64VMM, CBLAS
+
+
+1024 & 0.0907079646 &  & 0.270627063 & 0.0909090909 & 0.172631579 & 0.29390681 & 0.0896174863 & 0.455555556 \\
+2048 & 0.0917034965 & 0.281407725 & 0.0912694878 & 0.213855186 & 0.18585034 & 0.176447793 & 0.654371257 \\
+4096 & 0.0897788126 & 0.257167517 & 0.0900006865 & 0.31477551 & 0.374797027 & 0.315229623 & 0.321964637 \\
+8192 &  0.0894051049 & 0.255482362 & 0.0901134254 & 0.335263427 & 0.390899061 & 0.365733417 & 0.286656462 \\
+16384 & 0.0893379565 & 0.255388999 & 0.0896867583 & 0.346348714 & 0.359844208 & 0.349465125 & 0.283496668  
+
+
+
+\begin{table}
+\scalebox{0.8}{
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Problem Size & OMP-1 VMM & OMP-4 VMM & OMP-16 VMM & OMP-64 VMM \\
+\hline
+1024 & 9.09 & 17.26 & 29.39 & 8.96 \\
+\hline
+2048 & 9.13 & 21.38 & 18.59 & 17.64 \\
+\hline
+4096 & 9.00 & 31.48 & 37.48 & 31.52 \\
+\hline
+8192 & 9.01 & 33.53 & 39.08 & 36.57 \\
+\hline
+16384 & 8.96 & 34.63 & 35.98 & 34.94 \\
+\hline
+\end{tabular}
+}
+\caption{Percent of Peak Memory Bandwidth for different levels of parallelism}
+\label{tab:VMM}
+\end{table}
+
+\begin{table}
+\scalebox{0.5}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+Problem Size & Basic VMM & Vector VMM & OMP-1 VMM & OMP-4 VMM & OMP-16 VMM & OMP-64 VMM & CBLAS \\
+\hline
+1024 & 9.07 & 27.06 & 9.09 & 17.26 & 29.39 & 8.96 & 45.56 \\
+\hline
+2048 & 9.17 & 28.14 & 9.13 & 21.38 & 18.59 & 17.64 & 65.44 \\
+\hline
+4096 & 8.98 & 25.72 & 9.00 & 31.48 & 37.48 & 31.52 & 32.19 \\
+\hline
+8192 & 8.94 & 25.55 & 9.01 & 33.53 & 39.08 & 36.57 & 28.67 \\
+\hline
+16384 & 8.93 & 25.54 & 8.96 & 34.63 & 35.98 & 34.94 & 28.35 \\
+\hline
+\end{tabular}
+}
+\caption{Performance of VMMs}
+\label{tab:VMM}
+\end{table}
+
+
+
+
+
+
+
+
+
+\begin{table}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Problem Size & Basic VMM & Vector VMM & CBLAS \\
+\hline
+1024 & 9.07 & 27.06 & 45.56 \\
+\hline
+2048 & 9.17 & 28.14 & 65.44 \\
+\hline
+4096 & 8.98 & 25.72 & 32.19 \\
+\hline
+8192 & 8.94 & 25.55 & 28.67 \\
+\hline
+16384 & 8.93 & 25.54 & 28.35 \\
+\hline
+\end{tabular}
+\caption{Performance of VMMs}
+\label{tab:VMM}
+\end{table}

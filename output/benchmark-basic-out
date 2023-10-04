@@ -1,14 +1,14 @@
 Description:	Basic implementation of matrix-vector multiply.
 
 Working on problem size N=1024 
-Elapsed time: 0.003541 seconds 
+Elapsed time: 0.000903 seconds 
 Working on problem size N=1024 
-Elapsed time: 0.003730 seconds 
+Elapsed time: 0.000904 seconds 
 Working on problem size N=2048 
-Elapsed time: 0.014442 seconds 
+Elapsed time: 0.003575 seconds 
 Working on problem size N=4096 
-Elapsed time: 0.058122 seconds 
+Elapsed time: 0.014603 seconds 
 Working on problem size N=8192 
-Elapsed time: 0.245379 seconds 
+Elapsed time: 0.058649 seconds 
 Working on problem size N=16384 
-Elapsed time: 0.930506 seconds 
+Elapsed time: 0.234758 seconds  
